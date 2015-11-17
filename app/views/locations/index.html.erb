@@ -1,0 +1,7 @@
+<h1>List of Locations</h1>
+
+<%= link_to "Create New Report", new_report_path %>
+
+<% @locations.each do |location| %>
+  <ul><%= link_to "#{location.city}, #{location.country}", location_path(location)%></ul>
+<% end %>

@@ -1,7 +1,5 @@
-<h1>Tour Reports</h1>
-
 <%= link_to "Create New Report", new_report_path %>
 
-<% @reports.each do |report| %>
+<% @location.reports.each do |report| %>
   <ul><%= link_to "#{report.location.city} written #{report.created_at.strftime("%B %d, %Y")}", report_path(report) %></ul>
 <% end %>

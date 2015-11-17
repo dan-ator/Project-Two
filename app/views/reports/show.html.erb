@@ -1,0 +1,13 @@
+<h1><%= @locations.city %></h1>
+
+<%= link_to "New Topic", new_report_info_item_path(@report) %>
+<%= link_to "Delete Report", report_path(@report), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+
+<h3>Info Items</h3>
+<% @report.info_items.each do |info_item| %>
+  <h4><%= "#{info_item.category}" %>
+    <%= link_to "Edit", edit_report_info_item_path(@report,info_item) %>
+    <%= link_to "Delete", report_info_item_path(@report, info_item), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+</h4>
+  <p><%= "#{info_item.body}" %></p>
+<% end %>

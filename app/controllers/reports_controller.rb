@@ -11,21 +11,24 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
 
   def create
-    @report = current_user.reports.create!
+    @report = Report.create(report_params)
     redirect_to report_path(@report)
   end
 
   def show
-  end
-
-  def edit
-  end
-
-  def update
+    @report = Report.find(params[:id])
+    @locations = @report.location
   end
 
   def destroy
+    @report = Report.find(params[:id])
+    @report.destroy
+    redirect_to reports_path
   end
 
+private
+def report_params
+  params.require(:report).permit(:user_id, :created_at, :location_id)
+end
 
 end
