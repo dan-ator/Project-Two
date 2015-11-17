@@ -10,6 +10,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
     @report = Report.find(params[:report_id])
   end
 
+
   def create
     @report = Report.find(params[:report_id])
     @info_item = @report.info_items.create(info_item_params)
@@ -23,7 +24,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
   def update
     @report = Report.find(params[:report_id])
-    @info_item = @report.info_items.find(params[:id]).update(info_item_params)
+    @info_item = InfoItem.find(params[:id]).update(info_item_params)
     redirect_to report_path(@report)
   end
 

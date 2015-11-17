@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   #create
   def create
     @info_item = InfoItem.find(params[:info_item_id])
-    @comment = @info_item.comments.create!(comment_params)
+    @comment = @info_item.comments.create!(comment_params.merge(user: current_user))
     redirect_to report_path(@info_item.report)
   end
 
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-      params.require(:comment).permit(:title, :body, :info_item_id, :user_id)
+      params.require(:comment).permit(:title, :body, :info_item_id)
   end
 
 end

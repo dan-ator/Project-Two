@@ -11,7 +11,8 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
 
   def create
-    @report = Report.create(report_params)
+    @report = current_user.reports.create(report_params)
+    # @report = Report.create(report_params.merge(user: current_user))
     redirect_to report_path(@report)
   end
 
@@ -28,7 +29,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
 private
 def report_params
-  params.require(:report).permit(:user_id, :created_at, :location_id)
+  params.require(:report).permit(:created_at, :location_id)
 end
 
 end
