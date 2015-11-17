@@ -1,4 +1,4 @@
 class Comment < ActiveRecord::Base
-  belongs_to :InfoItem
-  belongs_to :User
+  belongs_to :info_item
+  belongs_to :user
 end

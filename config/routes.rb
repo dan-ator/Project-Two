@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :reports do
     resources :info_items
   end
+  resources :info_items do
+    resources :comments
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,9 +5,15 @@
 
 <h3>Info Items</h3>
 <% @report.info_items.each do |info_item| %>
-  <h4><%= "#{info_item.category}" %>
-    <%= link_to "Edit", edit_report_info_item_path(@report,info_item) %>
-    <%= link_to "Delete", report_info_item_path(@report, info_item), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+<h4><%= info_item.category %>
+  <%= link_to "Edit", edit_report_info_item_path(@report,info_item) %>
+  <%= link_to "Delete", report_info_item_path(@report, info_item), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
 </h4>
-  <p><%= "#{info_item.body}" %></p>
+<p><%= info_item.body %></p>
+
+<%= link_to "Comment", new_info_item_comment_path(info_item) %>
+
+<% info_item.comments.each do |comment| %>
+<ul><strong><%= comment.title %></strong> <%= comment.body %></ul>
+<% end %>
 <% end %>
