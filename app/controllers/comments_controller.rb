@@ -18,20 +18,22 @@ class CommentsController < ApplicationController
     redirect_to report_path(@info_item.report)
   end
 
-  #show
-  def show
-  end
-
-  #edit
   def edit
+    @info_item = InfoItem.find(params[:info_item_id])
+    @comment = @info_item.comments.find(params[:id])
   end
 
-  #update
   def update
+    @info_item = InfoItem.find(params[:info_item_id])
+    @comment = @info_item.comments.find(params[:id]).update(comment_params)
+    redirect_to report_path(@info_item.report)
   end
 
-  #destroy
   def destroy
+    @info_item = InfoItem.find(params[:info_item_id])
+    @comment = @info_item.comments.find(params[:id])
+    @comment.destroy
+    redirect_to report_path(@info_item.report)
   end
 
   private

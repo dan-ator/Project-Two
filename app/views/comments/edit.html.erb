@@ -3,12 +3,12 @@
 <div class="form">
   <%= form_for [@info_item, @comment] do |f| %>
 
-  <%= f.label :category %>
-  <%= f.text_field :category %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
   <%= f.label :body %>
   <%= f.text_field :body %>
 
-  <%= f.submit "Add Topic" %>
+  <%= f.submit "Edit Comment" %>
   <% end %>
 </div>
