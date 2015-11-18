@@ -7,7 +7,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can [:create, :update, :destroy], [Report, Comment], :user_id => user.id
+      can [:create, :update, :destroy], [Report, Comment, Profile], :user_id => user.id
 
       can :add_info_item, Report, user_id: user.id
       can [:create, :update, :destroy], InfoItem do |info|

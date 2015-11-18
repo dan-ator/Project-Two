@@ -1,6 +1,14 @@
 <h1>Profile of <%= @profile.user.email %></h1>
 
-<% if@profile.facebook_url != "" %>
+<% if can? :destroy, @profile %>
+<%= link_to "Delete Profile", profile_path(@profile), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+<% end %>
+
+<% if can? :edit, @profile %>
+<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+<% end %>
+
+<% if @profile.facebook_url != "" %>
 <a href="<%= @profile.facebook_url %>">Facebook Profile</a>
 <% end %>
 

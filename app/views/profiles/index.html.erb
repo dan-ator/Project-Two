@@ -3,5 +3,5 @@
 <%= link_to "Create Profile", new_profile_path %>
 
 <% @profiles.each do |profile| %>
-<ul><%= link_to "#{profile.user}", profile_path(profile) %></ul>
+<ul><%= link_to "#{profile.user_id}", profile_path(profile) %></ul>
 <% end %>

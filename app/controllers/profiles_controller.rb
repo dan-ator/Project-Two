@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
 
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+load_and_authorize_resource
 
 def index
   @profiles = Profile.all
@@ -21,12 +22,19 @@ def show
 end
 
 def edit
+  @profile = Profile.find(params[:id])
 end
 
 def update
+  @profile = Profile.find(params[:id])
+  @profile.update!(profile_params)
+  redirect_to profile_path(@profile)
 end
 
 def destroy
+  @profile = Profile.find(params[:id])
+  @profile.destroy
+  redirect_to profiles_path
 end
 
 private
