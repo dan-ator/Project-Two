@@ -1,0 +1,15 @@
+<h1>Profile of <%= @profile.user.email %></h1>
+
+<% if@profile.facebook_url != "" %>
+<a href="<%= @profile.facebook_url %>">Facebook Profile</a>
+<% end %>
+
+<% if @profile.blog_url != "" %>
+<a href="<%= @profile.blog_url %>">Personal Blog</a>
+<% end %>
+
+<% if @profile.other_url != "" %>
+<a href="<%= @profile.other_url %>">Other Personal Site</a>
+<% end %>
+
+<p><%= @profile.info %></p>

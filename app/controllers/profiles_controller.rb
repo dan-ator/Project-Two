@@ -1,17 +1,23 @@
-class ProfileController <ApplicationController
+class ProfilesController < ApplicationController
+
+before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 def index
   @profiles = Profile.all
 end
 
 def new
+  @profile = Profile.new
 end
 
 def create
+  @profile = Profile.all
+  @profile.create!(profile_params.merge(user: current_user))
+  redirect_to profiles_path
 end
 
 def show
-  @profile = profile.find(params[:id])
+  @profile = Profile.find(params[:id])
 end
 
 def edit

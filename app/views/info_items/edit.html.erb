@@ -1,7 +1,7 @@
 <h1>Edit Topic</h1>
 
 <div class="form">
-  <%= form_for [@report, @info_item] do |f| %>
+  <%= form_for [@info_item.report, @info_item] do |f| %>
 
   <%= f.label :category %>
   <%= f.text_field :category %>

@@ -1,7 +1,7 @@
 <h1>Edit Comment</h1>
 
 <div class="form">
-  <%= form_for [@info_item, @comment] do |f| %>
+  <%= form_for [@comment.info_item, @comment] do |f| %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>

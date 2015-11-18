@@ -1,0 +1,20 @@
+<h1>New Profile</h1>
+
+<div class="form">
+  <%= form_for [@profile] do |f| %>
+
+  <%= f.label :info %>
+  <%= f.text_field :info %>
+
+  <%= f.label :facebook_url %>
+  <%= f.text_field :facebook_url %>
+
+  <%= f.label :blog_url %>
+  <%= f.text_field :blog_url %>
+
+  <%= f.label :other_url %>
+  <%= f.text_field :other_url %>
+
+  <%= f.submit "Create Profile" %>
+  <% end %>
+</div>

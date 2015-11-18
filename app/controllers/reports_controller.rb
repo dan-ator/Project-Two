@@ -13,7 +13,6 @@ load_and_authorize_resource
 
   def create
     @report = current_user.reports.create(report_params)
-    # @report = Report.create(report_params.merge(user: current_user))
     redirect_to report_path(@report)
   end
 

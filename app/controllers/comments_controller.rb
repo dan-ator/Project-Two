@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
 
-  #index
-  def index
-
-  end
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   #new
   def new
@@ -19,21 +17,20 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @info_item = InfoItem.find(params[:info_item_id])
-    @comment = @info_item.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   def update
-    @info_item = InfoItem.find(params[:info_item_id])
-    @comment = @info_item.comments.find(params[:id]).update(comment_params)
-    redirect_to report_path(@info_item.report)
+    @comment = Comment.find(params[:id])
+    @comment.update!(comment_params)
+    redirect_to report_path(@comment.info_item.report)
   end
 
   def destroy
-    @info_item = InfoItem.find(params[:info_item_id])
-    @comment = @info_item.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
+    report = @comment.info_item.report
     @comment.destroy
-    redirect_to report_path(@info_item.report)
+    redirect_to report_path(report)
   end
 
   private

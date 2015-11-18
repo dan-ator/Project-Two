@@ -1,0 +1,9 @@
+<ul><strong><%= comment.title %>-<%= comment.user.email %></strong> <%= comment.body %></ul>
+
+<% if can? :update, comment %>
+  <%= link_to "Edit Comment", edit_info_item_comment_path(comment.info_item, comment) %>
+<% end %>
+
+<% if can? :destroy, comment %>
+  <%= link_to "Delete Comment", info_item_comment_path(comment.info_item, comment), method: :delete, data:{confirm: "Are you sure?"} %>
+<% end %>

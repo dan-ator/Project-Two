@@ -1,7 +1,8 @@
 class InfoItemsController < ApplicationController
 
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-load_and_authorize_resource 
+load_and_authorize_resource :report
+load_and_authorize_resource :info_item, through: :report
 
   def index
   end
@@ -19,14 +20,13 @@ load_and_authorize_resource
   end
 
   def edit
-    @report = Report.find(params[:report_id])
     @info_item = @report.info_items.find(params[:id])
   end
 
   def update
-    @report = Report.find(params[:report_id])
-    @info_item = InfoItem.find(params[:id]).update(info_item_params)
-    redirect_to report_path(@report)
+    @info_item = InfoItem.find(params[:id])
+    @info_item.update(info_item_params)
+    redirect_to report_path(@info_item.report)
   end
 
   def destroy
