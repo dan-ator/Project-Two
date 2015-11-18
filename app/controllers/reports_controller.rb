@@ -1,6 +1,7 @@
 class ReportsController < ApplicationController
 
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+load_and_authorize_resource
 
   def index
     @reports = Report.all

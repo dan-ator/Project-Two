@@ -1,20 +1,33 @@
 <h1><%= @locations.city %></h1>
+
+<!-- Delete Repoort -->
+<% if can? :destroy, @report %>
 <%= link_to "(Delete Report)", report_path(@report), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+<% end %>
+
+<!-- Create Info Item -->
+<% if can? :create, @report.info_items %>
 <%= link_to "New Topic", new_report_info_item_path(@report) %>
+<% end %>
 
 <h3>Topics</h3>
+<!-- List Info Items -->
 <% @report.info_items.each do |info_item| %>
-<h4><%= info_item.category %>
+<h4><%= info_item.category %></h4>
+  <% if can? :update, info_item %>
   <%= link_to "Edit", edit_report_info_item_path(@report,info_item) %>
+  <% end %>
+  <% if can? :destroy, info_item %>
   <%= link_to "Delete", report_info_item_path(@report, info_item), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
-</h4>
+  <% end %>
 <p><%= info_item.body %></p>
 
+<!-- New Comment -->
 <%= link_to "Comment", new_info_item_comment_path(info_item) %>
 
 <% info_item.comments.each do |comment| %>
 <ul><strong><%= comment.title %></strong> <%= comment.body %></ul>
-<%= link_to "Edit Comment", edit_info_item_comment_path(info_item, comment) %>
-<%= link_to "Delete Comment", info_item_comment_path(info_item, comment), method: :delete, data:{confirm: "Are you sure?"} %>
-<% end %>
+  <%= link_to "Edit Comment", edit_info_item_comment_path(info_item, comment) %>
+  <%= link_to "Delete Comment", info_item_comment_path(info_item, comment), method: :delete, data:{confirm: "Are you sure?"} %>
+  <% end %>
 <% end %>
