@@ -8,7 +8,11 @@ def index
 end
 
 def new
+  if current_user.profile
+    redirect_to profiles_path, alert: "You already have a profile!!"
+  else
   @profile = Profile.new
+  end
 end
 
 def create
@@ -41,6 +45,5 @@ private
 def profile_params
   params.require(:profile).permit(:info, :facebook_url, :blog_url, :other_url)
 end
-
 
 end
