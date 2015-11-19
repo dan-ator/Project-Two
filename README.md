@@ -1,5 +1,5 @@
 # Project-Two
-The basic idea for the project is an online resource for spouses and families within the foreign service, military, or corporate expat community to contribute and access information about different places as an expat. The information should be formatted as "tips."  Everyday abroad there are little things that can go wrong and things that go right.  This site will be a way to easily share tricks and tips about tours in the foreign service, military, etc. from the point of view of the spouse/family.  It would allow for follow-up questions to posts people write.
+The basic idea for the project is an online resource for spouses and families within the foreign service, military, or corporate expat community to contribute and access information about different places as an expat. The information should be formatted as "tips."  This site will be a way to easily share tricks and tips about tours in the foreign service, military, etc. from the point of view of the spouse/family.  It would allow for follow-up questions to posts people write, in order to help provide context to it all.
 
 Models:
 
@@ -21,4 +21,6 @@ Relationships:
 
 A user has zero, one or many tours.  A tour has zero, one or many users; many categories.  A category has many tours.
 
-Names for App:
+For this I used Ruby on Rails with gems Devise and Cancancan.  I started by setting up the most basic models and implementing the functionality for them first.  If running this locally, make sure to seed the locations data.
+
+Some issues which I was not able to get to include validation for the url input boxes on the profile page.  If a user enters in something that is not a workable URL, a link will be created on the profile page but then if clicked on it will throw an error.  I also would have liked to have included the new report creator in the same page as the reports or locations, rather than routing to a different page.
