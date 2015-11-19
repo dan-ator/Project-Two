@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: "locations#index"
+  root to: "welcome#index"
   resources :locations
   resources :reports do
     resources :info_items
