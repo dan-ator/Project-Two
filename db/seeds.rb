@@ -5,6 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, city: { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: city: cities.first)
+
+## All these cities can be concatenated into a single Location.create call, like above
+## Not a big deal, maybe consider using Faker gem to populate seed in a loop? It would
+## look something like this:
+
+## 100.times do
+##    place = Faker::Place
+##    Location.create(:country => place.country, :city => place.city)
+## end
+
 Location.create(country: "Algeria", city: "Algiers")
 Location.create(country: "Angola", city: "Luanda")
 Location.create(country: "Benin", city: "Cotonou")
