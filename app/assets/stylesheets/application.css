@@ -30,6 +30,8 @@
   font-family: 'Lato', sans-serif;
   font-weight: bolder;
   line-height: 100px;
+}
+#header a {
   color: black;
 }
 .navigation {
@@ -55,7 +57,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: #5FA8D3;
+  color: #3782ad;
 }
 a:hover {
   text-decoration: underline;
