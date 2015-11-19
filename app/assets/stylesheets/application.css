@@ -23,30 +23,31 @@
 #header {
   text-align: center;
   font-size: 45px;
-  background-image: url("https://raymesamuels.files.wordpress.com/2008/10/banner-globe.jpg?w=767");
+  background-color: #62B6CB;
   height: 100px;
   padding: 10px;
-  border: 2px solid grey;
+  /*border: 2px solid grey;*/
   margin: 1px 0;
-  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-family: 'Lato', sans-serif;
   font-weight: bolder;
+  line-height: 100px;
 }
 .navigation {
   text-align: center;
   list-style-type: none;
-  background-color: rgba(213, 231, 127, 0.95);
+  background-color: #BEE9E8;
   padding: 10px;
-  border: 2px solid grey;
+  /*border: 2px solid grey;*/
   margin: 1px 0;
-  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-family: 'Roboto', sans-serif;
 }
 .login {
   text-align: center;
-  background-color: rgba(213, 231, 127, 0.95);
+  background-color: #BEE9E8;
   padding: 5px;
-  border: 2px solid grey;
+  /*border: 2px solid grey;*/
   margin: 1px 15%;
-  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-family: 'Roboto', sans-serif;
 }
 .user_login {
   color: white;
@@ -58,20 +59,21 @@ li {
 }
 a {
   text-decoration: none;
-  color: blue;
+  color: #5FA8D3;
 }
 a:hover {
   text-decoration: underline;
-  color: green;
+  color: blue;
 }
 body {
-  background-color: rgb(74, 70, 101);
+  background-color: #1B4965;
+  font-family: 'Roboto', sans-serif;
+
 }
 .page {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #CAE9FF;
   padding: 10px;
-  border: 2px solid grey;
-  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  /*border: 2px solid grey;*/
 }
 .container {
   margin: 0 15%;
