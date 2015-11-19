@@ -17,3 +17,97 @@
   font-size: 45px;
   color: red;
 }
+.comments {
+  text-align: center;
+}
+#header {
+  text-align: center;
+  font-size: 45px;
+  background-image: url("https://raymesamuels.files.wordpress.com/2008/10/banner-globe.jpg?w=767");
+  height: 100px;
+  padding: 10px;
+  border: 2px solid grey;
+  margin: 1px 0;
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-weight: bolder;
+}
+.navigation {
+  text-align: center;
+  list-style-type: none;
+  background-color: rgba(213, 231, 127, 0.95);
+  padding: 10px;
+  border: 2px solid grey;
+  margin: 1px 0;
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+}
+.login {
+  text-align: center;
+  background-color: rgba(213, 231, 127, 0.95);
+  padding: 5px;
+  border: 2px solid grey;
+  margin: 1px 15%;
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+}
+.user_login {
+  color: white;
+}
+li {
+  display: inline;
+  font-size: 20px;
+  padding: 2px 50px;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+a:hover {
+  text-decoration: underline;
+  color: green;
+}
+body {
+  background-color: rgb(74, 70, 101);
+}
+.page {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border: 2px solid grey;
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+}
+.container {
+  margin: 0 15%;
+}
+h2 {
+  font-size: 25px;
+  text-decoration: underline;
+  display: inline;
+}
+.comment_title {
+  font-size: 20px;
+}
+.destroy {
+  display: inline;
+}
+.edit {
+  display: inline;
+}
+.title {
+  display: inline;
+}
+.subtitle {
+  display: inline;
+}
+#new {
+  display: inline;
+}
+h1 {
+  text-align: center;
+}
+.edit_delete {
+  display: inline;
+}
+.links {
+  text-align: center;
+}
+p {
+  text-align: justify;
+}

@@ -1,31 +1,39 @@
-<h1><%= @locations.city %></h1>
+<h1 class="title"><%= @locations.city %></h1>
 
 <!-- Delete Repoort -->
-<% if can? :destroy, @report %>
-  <%= link_to "(Delete Report)", report_path(@report), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+<div class="destroy">
+  <% if can? :destroy, @report %>
+  <%= link_to "Delete", report_path(@report), method: :delete, data: {confirm: "Are you sure you want to delete the whole report?"} %>
 <% end %>
-
+</div>
 <!-- Create Info Item -->
-<% if can? :add_info_item, @report %>
-  <%= link_to "New Topic", new_report_info_item_path(@report) %>
-<% end %>
 
-<h3>Topics</h3>
+<br>
+<div id="new">
+<% if can? :add_info_item, @report %>
+  <%= link_to "Add Topic", new_report_info_item_path(@report) %>
+<% end %>
+</div>
+
+
 <!-- List Info Items -->
 <% @report.info_items.each do |info_item| %>
 
-  <h4><%= info_item.category %></h4>
-    <% if can? :update, info_item %>
-      <%= link_to "Edit", edit_report_info_item_path(@report,info_item) %>
-    <% end %>
+<br><h2><%= info_item.category %></h2>
+    <div class="edit_delete">
+      <% if can? :update, info_item %>
+        <%= link_to "Edit", edit_report_info_item_path(@report,info_item) %>
+      <% end %>
+
     <% if can? :destroy, info_item %>
-      <%= link_to "Delete", report_info_item_path(@report, info_item), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+      <%= link_to "Delete", report_info_item_path(@report, info_item), method: :delete, data: {confirm: "Are you sure you want to delete this info item?"} %>
     <% end %>
+    </div>
   <p><%= info_item.body %></p>
 
-  <!-- New Comment -->
-  <%= link_to "Comment", new_info_item_comment_path(info_item) %>
-
   <%= render info_item.comments %>
-
+  <!-- New Comment -->
+  <div class = "links">
+    <%= link_to "Comment", new_info_item_comment_path(info_item) %>
+  </div>
 <% end %>

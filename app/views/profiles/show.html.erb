@@ -1,23 +1,24 @@
-<h1>Profile of <%= @profile.user.email %></h1>
-
+<h1 class = "subtitle">Profile of <%= @profile.user.email %></h1>
+<div class = "edit_delete">
 <% if can? :destroy, @profile %>
-<%= link_to "Delete Profile", profile_path(@profile), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+<%= link_to "Delete", profile_path(@profile), method: :delete, data: {confirm: "Are you sure you want to delete your profile?"} %>
 <% end %>
 
 <% if can? :edit, @profile %>
-<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+<%= link_to "Edit", edit_profile_path(@profile) %>
 <% end %>
-
+</div>
+<br>
 <% if @profile.facebook_url != "" %>
 <a href="<%= @profile.facebook_url %>">Facebook Profile</a>
 <% end %>
 
 <% if @profile.blog_url != "" %>
-<a href="<%= @profile.blog_url %>">Personal Blog</a>
+<a href="<%= @profile.blog_url %>">- Personal Blog</a>
 <% end %>
 
 <% if @profile.other_url != "" %>
-<a href="<%= @profile.other_url %>">Other Personal Site</a>
+<a href="<%= @profile.other_url %>">- Other Personal Site</a>
 <% end %>
 
 <p><%= @profile.info %></p>
