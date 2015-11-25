@@ -1,3 +1,4 @@
+<!-- nice use of partials here! -->
 <% if comment.user.profile %>
   <div class = "comments"><strong><%= comment.title %> - <%= link_to "#{comment.user.email}",profile_path(comment.user.profile) %></strong>
 <% else %>

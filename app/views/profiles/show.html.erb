@@ -1,6 +1,6 @@
 <h1 class = "subtitle">Profile of <%= @profile.user.email %></h1>
 <div class = "edit_delete">
-<% if can? :destroy, @profile %>
+<% if can? :destroy, @profile %> <!-- Indent inside if statements and do...end blocks!-->
 <%= link_to "Delete", profile_path(@profile), method: :delete, data: {confirm: "Are you sure you want to delete your profile?"} %>
 <% end %>
 
@@ -10,6 +10,7 @@
 </div>
 <br>
 <% if @profile.facebook_url != "" %>
+<!-- why not use link_to here and everywhere else? -->
 <a href="<%= @profile.facebook_url %>">Facebook Profile</a>
 <% end %>
 
