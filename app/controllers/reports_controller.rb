@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-
+# indentation here and below for params
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 load_and_authorize_resource
 

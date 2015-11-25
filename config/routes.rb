@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # nice use of nested routes!
+  # this could use a bit of organization for better legibility though...
+  # my suggestion:
+
+  # root to: "welcome#index"
+  #
+  # devise_for :users
+  # resources :locations
+  # resources :profiles
+  #
+  # resources :reports do
+  #   resources :info_items
+  # end
+  #
+  # resources :info_items, only: [] do
+  #   resources :comments
+  # end
 
   devise_for :users
   root to: "welcome#index"
@@ -6,6 +23,7 @@ Rails.application.routes.draw do
   resources :reports do
     resources :info_items
   end
+
   resources :info_items, only: [] do
     resources :comments
   end

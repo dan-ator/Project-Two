@@ -1,5 +1,6 @@
 class InfoItemsController < ApplicationController
 
+# these three lines should be indented in
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 load_and_authorize_resource :report
 load_and_authorize_resource :info_item, through: :report
@@ -13,7 +14,7 @@ load_and_authorize_resource :info_item, through: :report
   end
 
 
-  def create
+  def create # extra whitespace above! be consistent!
     @report = Report.find(params[:report_id])
     @info_item = @report.info_items.create(info_item_params)
     redirect_to report_path(@report)

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+# everthing below should be indented!
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 load_and_authorize_resource
 
@@ -8,6 +8,7 @@ def index
 end
 
 def new
+  # nice!
   if current_user.profile
     redirect_to profiles_path, alert: "You already have a profile!!"
   else
@@ -16,6 +17,8 @@ def new
 end
 
 def create
+  # you should do the same check that the user doesn't have a profile here
+  # or at least use a validation on the profile model to prevent it.
   @profile = Profile.all
   @profile.create!(profile_params.merge(user: current_user))
   redirect_to profiles_path
